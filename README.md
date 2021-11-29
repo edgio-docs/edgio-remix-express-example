@@ -14,7 +14,7 @@ https://layer0-docs-layer0-remix-express-example-default.layer0-limelight.link
 
 ### Clone This Repo
 
-Use `git clone https://github.com/rishi-raj-jain/layer0-remix.git` to get the files within this repository onto your local machine.
+Use `git clone https://github.com/layer0-docs/layer0-remix-express-example.git` to get the files within this repository onto your local machine.
 
 ### Install dependencies
 
