@@ -6,7 +6,9 @@
     "start": "cross-env NODE_ENV=production node server/index.js",
     "start:dev": "cross-env NODE_ENV=development node server/index.js",
     "format": "prettier --write '**/*' --ignore-unknown",
-    "deploy": "layer0 deploy"
+    "deploy": "layer0 deploy",
+    "layer0:dev": "layer0 dev",
+    "layer0:build": "layer0 build"
   },
   "name": "layer0-remix-express-example",
   "dependencies": {
