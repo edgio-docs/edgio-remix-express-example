@@ -23,7 +23,7 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {
-    "@layer0/cli": "^4.5.1",
+    "@layer0/cli": "^4.13.8",
     "@layer0/core": "^4.5.1",
     "@layer0/devtools": "^4.5.1",
     "@layer0/express": "^4.5.1",
