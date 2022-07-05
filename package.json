@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@layer0/cli": "^4.13.9",
-    "@layer0/core": "^4.13.9",
+    "@layer0/core": "^4.15.6",
     "@layer0/devtools": "^4.13.9",
     "@layer0/express": "^4.13.9",
     "@layer0/prefetch": "^4.13.9",
