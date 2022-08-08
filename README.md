@@ -37,16 +37,17 @@ npm run dev
 You can do a production build of your app and test it locally using:
 
 ```bash
-layer0 build && layer0 run --production
+npm run build && layer0 build && layer0 run --production
 ```
 
-Setting --production runs your app exactly as it will be uploaded to the Layer0 cloud using serverless-offline.
+Setting `--production` runs your app exactly as it will be uploaded to the Layer0 cloud using serverless-offline.
 
 ## Deploying to Layer0
 
 Deploying requires an account on Layer0. [Sign up here for free](https://app.layer0.co/signup). Once you have an account, you can deploy to Layer0 by running the following in the root folder of your project:
 
 ```bash
+npm run build
 layer0 deploy
 ```
 
