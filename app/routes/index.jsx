@@ -10,9 +10,9 @@ const Home = () => {
           </a>
         </div>
         <div className="flex w-[330px] flex-col items-start justify-start rounded p-5 md:w-1/2">
-          <h1 className="text-xl font-bold text-white">Astro with Layer0</h1>
-          <h3 className="mt-2 text-lg text-[#FFFFFF75]">Layer0 supports all of the most powerful features of Astro!</h3>
-          <a className="mt-auto text-[#01B18D] hover:underline" href="https://docs.layer0.co/guides/astro" target="_blank">
+          <h1 className="text-xl font-bold text-white">Next.js with Layer0</h1>
+          <h3 className="mt-2 text-lg text-[#FFFFFF75]">Layer0 supports all of the most powerful features of Next.js!</h3>
+          <a className="mt-auto text-[#01B18D] hover:underline" href="https://docs.layer0.co/guides/next" target="_blank">
             Learn More &rarr;
           </a>
         </div>
