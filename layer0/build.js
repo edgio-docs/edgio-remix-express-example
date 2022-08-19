@@ -1,4 +1,7 @@
+const fs = require('fs')
+const rewire = require('rewire')
 const { join } = require('path')
+const esbuild = rewire('esbuild')
 const { exit } = require('process')
 const { buildSync } = require('esbuild')
 const { nodeFileTrace } = require('@vercel/nft')
@@ -6,6 +9,8 @@ const { DeploymentBuilder } = require('@layer0/core/deploy')
 
 const appDir = process.cwd()
 const builder = new DeploymentBuilder(appDir)
+
+const pkgAndSubpathForCurrentPlatform = esbuild.__get__('pkgAndSubpathForCurrentPlatform')
 
 module.exports = async function build(options) {
   try {
@@ -30,6 +35,23 @@ module.exports = async function build(options) {
       await builder.addJSAsset(`${appDir}/${i}`)
     })
     await builder.build()
+
+    const { pkg } = pkgAndSubpathForCurrentPlatform()
+
+    const remixNodeModulesFolder = `${builder.layer0Dir}/lambda/node_modules/@remix-run/dev/node_modules/`
+    if (fs.existsSync(remixNodeModulesFolder)) {
+      // Find all the folders and delete the ones that are not the platform-specific binary
+      fs.readdir(remixNodeModulesFolder, (err, files) => {
+        if (files) {
+          files.forEach((file) => {
+            if (file.includes('esbuild-') && !file.includes(pkg)) {
+              console.log(`Deleting the folder: ${remixNodeModulesFolder}${file}`)
+              fs.rmSync(`${remixNodeModulesFolder}${file}`, { recursive: true, force: true })
+            }
+          })
+        }
+      })
+    }
   } catch (e) {
     console.log(e)
     exit()
