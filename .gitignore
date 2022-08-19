@@ -1,8 +1,10 @@
 node_modules
 
 /.cache
-/server/build
+/build
 /public/build
+/dist
+.env
 
 # Layer0 generated build directory
 .layer0
