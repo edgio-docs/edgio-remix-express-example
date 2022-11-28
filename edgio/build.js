@@ -5,7 +5,7 @@ const esbuild = rewire('esbuild')
 const { exit } = require('process')
 const { buildSync } = require('esbuild')
 const { nodeFileTrace } = require('@vercel/nft')
-const { DeploymentBuilder } = require('@layer0/core/deploy')
+const { DeploymentBuilder } = require('@edgio/core/deploy')
 
 const appDir = process.cwd()
 const builder = new DeploymentBuilder(appDir)
@@ -38,7 +38,7 @@ module.exports = async function build(options) {
 
     const { pkg } = pkgAndSubpathForCurrentPlatform()
 
-    const remixNodeModulesFolder = `${builder.layer0Dir}/lambda/node_modules/@remix-run/dev/node_modules/`
+    const remixNodeModulesFolder = `${builder.edgioDir}/lambda/node_modules/@remix-run/dev/node_modules/`
     if (fs.existsSync(remixNodeModulesFolder)) {
       // Find all the folders and delete the ones that are not the platform-specific binary
       fs.readdir(remixNodeModulesFolder, (err, files) => {

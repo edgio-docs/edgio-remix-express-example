@@ -1,5 +1,5 @@
-import { Router } from '@layer0/core/router'
-import { isProductionBuild } from '@layer0/core/environment'
+import { Router } from '@edgio/core/router'
+import { isProductionBuild } from '@edgio/core/environment'
 import { ONE_DAY_CACHE_HANDLER, API_CACHE_HANDLER, IMAGE_CACHE_HANDLER } from './cache'
 
 const router = new Router()
@@ -7,12 +7,12 @@ const router = new Router()
 // Regex to catch multiple hostnames
 // Any deployment will have a L0 permalink
 // Don't allow Google bot to crawl it, read more on:
-// https://docs.layer0.co/guides/cookbook#blocking-search-engine-crawlers
+// https://docs.edgio.co/guides/cookbook#blocking-search-engine-crawlers
 router.noIndexPermalink()
 
-// Serve the old Layer0 predefined routes by the latest prefix
+// Serve the old Edgio predefined routes by the latest prefix
 router.match('/__xdn__/:path*', ({ redirect }) => {
-  redirect('/__layer0__/:path*', 301)
+  redirect('/__edgio__/:path*', 301)
 })
 
 // Service Worker

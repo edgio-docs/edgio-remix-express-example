@@ -1,5 +1,5 @@
 const { build } = require('esbuild')
-const { createDevServer } = require('@layer0/core/dev')
+const { createDevServer } = require('@edgio/core/dev')
 
 const appDir = process.cwd()
 
