@@ -1,0 +1,6 @@
+/.edgio
+/.vscode
+/dist
+/build
+.cache
+/public/build
